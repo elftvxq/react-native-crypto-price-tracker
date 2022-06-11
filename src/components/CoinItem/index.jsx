@@ -58,9 +58,9 @@ const CoinItem = ({ marketCoin }) => {
         </View>
       </View>
       <View style={{ marginLeft: 'auto', alignItems: 'flex-end' }}>
-        <Text style={styles.title}>{current_price}</Text>
+        <Text style={styles.title}>NT${current_price}</Text>
         <Text style={{ color: 'white' }}>
-          Volume USD${total_volume.toLocaleString()}
+          交易量 NT${total_volume.toLocaleString()}
         </Text>
       </View>
     </View>

@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { StyleSheet, View, FlatList, ActivityIndicator } from 'react-native';
 import CoinItem from './src/components/CoinItem';
 import cryptocurrencies from './assets/data/cryptocurrencies.json';
