@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import styles from './style.js';
+import styles from './styles';
 
 const CoinItem = () => {
   return (
