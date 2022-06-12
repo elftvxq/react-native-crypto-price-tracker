@@ -1,5 +1,12 @@
-import React, { useState } from 'react';
-import { View, Text, Image, Dimensions, TextInput } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import {
+  View,
+  Text,
+  Image,
+  Dimensions,
+  TextInput,
+  ActivityIndicator,
+} from 'react-native';
 import { Ionicons, EvilIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import {
@@ -12,54 +19,85 @@ import Coin from '../../../assets/data/crypto.json';
 import CoinDetailHeader from './components/CoinDetailHeader';
 import styles from './style';
 import { useRoute } from '@react-navigation/native';
+import {
+  getDetailedCoinData,
+  getCoinMarketChart,
+} from '../../services/request.js';
 
 const CoinDetailedScreen = () => {
+  // states
+  const [coin, setCoin] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [coinMarketData, setCoinMarketData] = useState(null);
+  const [coinValue, setCoinValue] = useState('1');
+  const [twdValue, setTwdValue] = useState('');
+
+  // to get the coin id as parameter to call accoding API
+  const route = useRoute();
+  const {
+    params: { coinId },
+  } = route;
+
+  // to get the screen full size
+  const screenWidth = Dimensions.get('window').width;
+
+  // to get coin details and market chart
+  const fetchCoinData = async () => {
+    setLoading(true);
+    const fetchedCoinData = await getDetailedCoinData(coinId);
+    const fetchedMarketCoinData = await getCoinMarketChart(coinId);
+    setCoin(fetchedCoinData);
+    setCoinMarketData(fetchedMarketCoinData);
+    setTwdValue(fetchedCoinData.market_data.current_price.twd.toString());
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchCoinData();
+  }, []);
+
+  if (loading || !coin || !coinMarketData) {
+    return <ActivityIndicator size='large' />;
+  }
+
   const {
     image: { small },
     symbol,
     name,
-    prices,
     market_data: {
       market_cap_rank,
       current_price,
       price_change_percentage_24h,
     },
-  } = Coin;
+  } = coin;
 
-  // states
-  const [coinValue, setCoinValue] = useState('1');
-  const [twdValue, setTwdValue] = useState(current_price.usd.toString());
-
-  const route = useRoute();
+  const { prices } = coinMarketData;
 
   const percentageColor =
     price_change_percentage_24h < 0 ? '#ea3943' : '#16c784';
 
   // to compare the current price to the price at the first price
-  const chartColor = current_price.usd > prices[0][1] ? '#16c784' : '#ea3943';
-
-  // to get the screen full size
-  const screenWidth = Dimensions.get('window').width;
+  const chartColor = current_price.twd > prices[0][1] ? '#16c784' : '#ea3943';
 
   // run and change UI thread instead JS thread, only updating UI
   const formatCurrency = (value) => {
     'worklet';
     if (value === '') {
-      return `$${current_price.usd.toFixed(2)} `;
+      return `NT$${current_price.twd.toFixed(2)} `;
     }
-    return `$${parseFloat(value).toFixed(2)}`;
+    return `NT$${parseFloat(value).toFixed(2)}`;
   };
 
   const changeCoinValue = (value) => {
     setCoinValue(value);
     const floatValue = parseFloat(value.replace(',', '.')) || 0;
-    setTwdValue((floatValue * current_price.usd).toString());
+    setTwdValue((floatValue * current_price.twd).toString());
   };
 
   const changeTwdValue = (value) => {
     setTwdValue(value);
     const floatValue = parseFloat(value.replace(',', '.')) || 0;
-    setCoinValue((floatValue / current_price.usd).toString());
+    setCoinValue((floatValue / current_price.twd).toString());
   };
 
   return (
