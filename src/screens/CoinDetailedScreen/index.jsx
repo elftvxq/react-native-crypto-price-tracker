@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, Image, Dimensions } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Image, Dimensions, TextInput } from 'react-native';
 import { Ionicons, EvilIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import {
@@ -25,6 +25,9 @@ const CoinDetailedScreen = () => {
     },
   } = Coin;
 
+  const [coinValue, setCoinValue] = useState('1');
+  const [twdValue, setTwdValue] = useState(current_price.usd.toString());
+
   const percentageColor =
     price_change_percentage_24h < 0 ? '#ea3943' : '#16c784';
 
@@ -41,6 +44,18 @@ const CoinDetailedScreen = () => {
       return `$${current_price.usd.toFixed(2)} `;
     }
     return `$${parseFloat(value).toFixed(2)}`;
+  };
+
+  const changeCoinValue = (value) => {
+    setCoinValue(value);
+    const floatValue = parseFloat(value.replace(',', '.')) || 0;
+    setTwdValue((floatValue * current_price.usd).toString());
+  };
+
+  const changeTwdValue = (value) => {
+    setTwdValue(value);
+    const floatValue = parseFloat(value.replace(',', '.')) || 0;
+    setCoinValue((floatValue / current_price.usd).toString());
   };
 
   return (
@@ -95,6 +110,30 @@ const CoinDetailedScreen = () => {
               backgroundColor: chartColor,
             }}
           />
+        </View>
+        <View style={{ flexDirection: 'row' }}>
+          <View style={{ flexDirection: 'row', flex: 1 }}>
+            <Text style={{ color: 'white', alignSelf: 'center' }}>
+              {symbol.toUpperCase()}
+            </Text>
+            <TextInput
+              style={styles.input}
+              value={coinValue}
+              keyboardType='numeric'
+              onChangeText={changeCoinValue}
+            />
+          </View>
+
+          <View style={{ flexDirection: 'row', flex: 1 }}>
+            <Text style={{ color: 'white', alignSelf: 'center' }}>TWD</Text>
+            {/* value only takes string */}
+            <TextInput
+              style={styles.input}
+              value={twdValue}
+              keyboardType='numeric'
+              onChangeText={changeTwdValue}
+            />
+          </View>
         </View>
       </ChartPathProvider>
     </View>
