@@ -11,6 +11,7 @@ import {
 import Coin from '../../../assets/data/crypto.json';
 import CoinDetailHeader from './components/CoinDetailHeader';
 import styles from './style';
+import { useRoute } from '@react-navigation/native';
 
 const CoinDetailedScreen = () => {
   const {
@@ -25,8 +26,11 @@ const CoinDetailedScreen = () => {
     },
   } = Coin;
 
+  // states
   const [coinValue, setCoinValue] = useState('1');
   const [twdValue, setTwdValue] = useState(current_price.usd.toString());
+
+  const route = useRoute();
 
   const percentageColor =
     price_change_percentage_24h < 0 ? '#ea3943' : '#16c784';

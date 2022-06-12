@@ -6,7 +6,7 @@ import Navigation from './src/navigation';
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={{ colors: { background: '#121212' } }}>
       <View style={styles.container}>
         <Navigation />
         <StatusBar style='light' />
