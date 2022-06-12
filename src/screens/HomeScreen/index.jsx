@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, FlatList, ActivityIndicator } from 'react-native';
-
 import CoinItem from '../../components/CoinItem';
-import cryptocurrencies from '../../../assets/data/cryptocurrencies.json';
 import { getCoinList } from '../../services/request.js';
 
 const HomeScreen = ({}) => {
