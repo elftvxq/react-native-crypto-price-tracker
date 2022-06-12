@@ -1,14 +1,33 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from '../screens/HomeScreen';
+import { Entypo } from '@expo/vector-icons';
 
-const tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 // TODO: component import to tab screen
 const BottomTabNavigator = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name='Home' />
-      {/* <Tab.Screen name='Settings' component={SettingsScreen} /> */}
+    <Tab.Navigator
+      initialRouteName='Home'
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: 'white',
+        tabBarInactiveTintColor: 'grey',
+        tabBarStyle: {
+          backgroundColor: '#181818',
+        },
+      }}
+    >
+      <Tab.Screen
+        name={'Home'}
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ focused, color }) => (
+            <Entypo name='home' size={focused ? 30 : 25} color={color} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
