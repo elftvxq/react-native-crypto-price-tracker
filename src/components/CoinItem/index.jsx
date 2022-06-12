@@ -14,6 +14,9 @@ const CoinItem = ({ marketCoin }) => {
     symbol,
   } = marketCoin;
 
+  const percentageColor =
+    price_change_percentage_24h < 0 ? '#ea3943' : '#16c784';
+
   const normalizeVolume = (volume) => {
     if (volume > 1_000_000_000_000) {
       return `${Math.floor(volume / 1_000_000_000_000)} T`;
@@ -47,18 +50,18 @@ const CoinItem = ({ marketCoin }) => {
 
           <Text style={styles.text}>{symbol.toUpperCase()}</Text>
           <AntDesign
-            name='caretdown'
+            name={price_change_percentage_24h < 0 ? 'caretdown' : 'caretup'}
             size={12}
-            color='white'
+            color={percentageColor}
             style={{ alignSelf: 'center', marginRight: 5 }}
           />
-          <Text style={styles.text}>
+          <Text style={{ color: percentageColor }}>
             {price_change_percentage_24h.toFixed(2)}%
           </Text>
         </View>
       </View>
       <View style={{ marginLeft: 'auto', alignItems: 'flex-end' }}>
-        <Text style={styles.title}>NT${current_price}</Text>
+        <Text style={styles.title}>NT${current_price.toLocaleString()}</Text>
         <Text style={{ color: 'white' }}>
           交易量 NT${total_volume.toLocaleString()}
         </Text>
