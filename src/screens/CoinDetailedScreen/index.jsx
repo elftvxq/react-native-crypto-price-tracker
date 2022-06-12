@@ -6,6 +6,7 @@ import {
   ChartDot,
   ChartPath,
   ChartPathProvider,
+  ChartYLabel,
 } from '@rainbow-me/animated-charts';
 import Coin from '../../../assets/data/crypto.json';
 import CoinDetailHeader from './components/CoinDetailHeader';
@@ -27,15 +28,27 @@ const CoinDetailedScreen = () => {
   const percentageColor =
     price_change_percentage_24h < 0 ? '#ea3943' : '#16c784';
 
+  // to compare the current price to the price at the first price
+  const chartColor = current_price.usd > prices[0][1] ? '#16c784' : '#ea3943';
+
   // to get the screen full size
   const screenWidth = Dimensions.get('window').width;
 
+  // run and change UI thread instead JS thread, only updating UI
+  const formatCurrency = (value) => {
+    'worklet';
+    if (value === '') {
+      return `$${current_price.usd.toFixed(2)} `;
+    }
+    return `$${parseFloat(value).toFixed(2)}`;
+  };
+
   return (
     <View style={{ paddingHorizontal: 10 }}>
-      {/* ChartPathProvider wrap */}
+      {/* ChartPathProvider: using anything from this lib, need to be wrapped */}
       <ChartPathProvider
         data={{
-          points: prices.map((price) => ({ x: price[0], y: price[1] })),
+          points: prices.map(([x, y]) => ({ x, y })),
           smoothingStrategy: 'bezier',
         }}
       >
@@ -48,7 +61,7 @@ const CoinDetailedScreen = () => {
         <View style={styles.priceContainer}>
           <View>
             <Text style={styles.name}>{name}</Text>
-            <Text style={styles.currentPrice}>${current_price.usd}</Text>
+            <ChartYLabel format={formatCurrency} style={styles.currentPrice} />
           </View>
           <View
             style={{
@@ -70,13 +83,19 @@ const CoinDetailedScreen = () => {
             </Text>
           </View>
         </View>
-
-        <ChartPath
-          height={screenWidth / 2}
-          stroke='yellow'
-          width={screenWidth}
-        />
-        <ChartDot style={{ backgroundColor: 'blue' }} />
+        <View>
+          <ChartPath
+            storkeWidth={2}
+            height={screenWidth / 2}
+            stroke={chartColor}
+            width={screenWidth}
+          />
+          <ChartDot
+            style={{
+              backgroundColor: chartColor,
+            }}
+          />
+        </View>
       </ChartPathProvider>
     </View>
   );
