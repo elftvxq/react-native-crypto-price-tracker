@@ -1,16 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect, useCallback } from 'react';
 import { StyleSheet, View, FlatList, ActivityIndicator } from 'react-native';
-import HomeScreen from './src/screens/HomeScreen';
-import CoinDetailedScreen from './src/screens/CoinDetailedScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import Navigation from './src/navigation';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <CoinDetailedScreen />
-      {/* <HomeScreen /> */}
-      <StatusBar style='light' />
-    </View>
+    <NavigationContainer>
+      <View style={styles.container}>
+        <Navigation />
+        <StatusBar style='light' />
+      </View>
+    </NavigationContainer>
   );
 }
 
