@@ -27,7 +27,7 @@ const HomeScreen = ({}) => {
     }
     setLoading(true);
     const fechedCoinList = await getCoinList();
-    setCoinList(fechedCoinsList);
+    setCoinList(fechedCoinList);
     setLoading(false);
   };
 
