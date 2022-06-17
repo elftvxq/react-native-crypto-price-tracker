@@ -16,6 +16,7 @@ const HomeScreen = ({}) => {
   const [coinList, setCoinList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [order, setOrder] = useState(1);
+
   const fetchCoinList = async (pageNumber) => {
     if (loading) {
       return;

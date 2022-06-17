@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: 'grey',
+    backgroundColor: '#585858',
   },
   text: {
     fontSize: 14,
