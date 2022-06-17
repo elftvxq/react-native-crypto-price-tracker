@@ -11,7 +11,15 @@ const HeaderBar = ({ title }) => {
         justifyContent: 'flex-end',
       }}
     >
-      <Text style={{ color: 'white', fontSize: 30 }}>{title}</Text>
+      <Text
+        style={{
+          color: 'white',
+          fontSize: 30,
+          fontWeight: 'bold',
+        }}
+      >
+        {title}
+      </Text>
     </View>
   );
 };
