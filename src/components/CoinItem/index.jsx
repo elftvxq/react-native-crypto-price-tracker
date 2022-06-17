@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import styles from './styles';
@@ -63,18 +63,22 @@ const CoinItem = ({ marketCoin }) => {
             style={{ alignSelf: 'center', marginRight: 5 }}
           />
           <Text style={{ color: percentageColor }}>
-            {price_change_percentage_24h.toFixed(2)}%
+            {price_change_percentage_24h &&
+              price_change_percentage_24h.toFixed(2)}
+            %
           </Text>
         </View>
       </View>
       <View style={{ marginLeft: 'auto', alignItems: 'flex-end' }}>
-        <Text style={styles.title}>NT${current_price.toLocaleString()}</Text>
+        <Text style={styles.title}>
+          NT${current_price && current_price.toLocaleString()}
+        </Text>
         <Text style={{ color: 'white' }}>
-          交易量 NT${total_volume.toLocaleString()}
+          交易量 NT${total_volume && total_volume.toLocaleString()}
         </Text>
       </View>
     </Pressable>
   );
 };
 
-export default CoinItem;
+export default memo(CoinItem);
