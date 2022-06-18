@@ -38,7 +38,7 @@ Scroll down to the bottm to get the next 25 datas of currencies
 Can sort by currenct name by alphabetically, current price and current total volume
 ![Sort Feature](https://i.imgur.com/0vq7t9R.jpg?1)
 
-### Currency Detailed Pahe
+### Currency Detailed Screen
 
 Can view the currency price details such as price change percentage in 24h, price change chart.
 
@@ -50,7 +50,7 @@ Crypto currency and TWD calculation convertor
 
 ![Currency Convertor](https://i.imgur.com/8qCwBGV.jpg?1)
 
-### Watch List
+### Watch List Screen
 
 User can add or remove the currency to watch list by clicing the star on the left upper corner.
 
