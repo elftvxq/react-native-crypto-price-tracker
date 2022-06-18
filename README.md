@@ -36,6 +36,7 @@ Scroll down to the bottom to get the next 25 records of currencies
 ![Home Screen](https://i.imgur.com/KbbeWZc.jpg?3)
 
 Can sort by currency name alphabetically, current price and current total volume
+
 ![Sort Feature](https://i.imgur.com/0vq7t9R.jpg?1)
 
 ### Currency Detailed Screen
