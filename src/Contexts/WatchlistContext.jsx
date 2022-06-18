@@ -1,12 +1,12 @@
 import React, { useContext, createContext, useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const WatchListContext = createContext();
+const WatchlistContext = createContext();
 
 // customized hooks, can directly import to use
-export const useWatchlist = () => useContext(WatchListContext);
+export const useWatchlist = () => useContext(WatchlistContext);
 
-const WatchListProvider = ({ children }) => {
+const WatchlistProvider = ({ children }) => {
   const [watchlistCoinIds, setWatchlistCoinIds] = useState([]);
 
   const getWatchlistData = async () => {
@@ -45,11 +45,15 @@ const WatchListProvider = ({ children }) => {
   };
 
   return (
-    <WatchListContext.Provider
-      value={{ watchlistCoinIds, storeWatchlistCoinId, removeWatchlistCoinIs }}
+    <WatchlistContext.Provider
+      value={{
+        watchlistCoinIds,
+        storeWatchlistCoinId,
+        removeWatchlistCoinIs,
+      }}
     >
       {children}
-    </WatchListContext.Provider>
+    </WatchlistContext.Provider>
   );
 };
-export default WatchListProvider;
+export default WatchlistProvider;
