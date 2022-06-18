@@ -29,9 +29,9 @@ expo start
 
 ### Home Screen
 
-Can view the first 25 datas of currencies detials including market rank, current price, and total volume.
+Can view the first 25 records of currencies detials including market rank, current price, and total volume.
 
-Scroll down to the bottm to get the next 25 datas of currencies
+Scroll down to the bottm to get the next 25 records of currencies
 
 ![Home Screen](https://i.imgur.com/KbbeWZc.jpg?3)
 
