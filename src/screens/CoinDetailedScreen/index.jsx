@@ -84,21 +84,21 @@ const CoinDetailedScreen = () => {
   const formatCurrency = (value) => {
     'worklet';
     if (value === '') {
-      return `NT$${current_price.twd.toFixed(2)} `;
+      return `NT$${current_price.twd.toLocaleString()} `;
     }
-    return `NT$${parseFloat(value).toFixed(2)}`;
+    return `NT$${parseFloat(value).toLocaleString()}`;
   };
 
   const changeCoinValue = (value) => {
     setCoinValue(value);
     const floatValue = parseFloat(value.replace(',', '.')) || 0;
-    setTwdValue((floatValue * current_price.twd).toString());
+    setTwdValue((floatValue * current_price.twd).toLocaleString().toString());
   };
 
   const changeTwdValue = (value) => {
     setTwdValue(value);
     const floatValue = parseFloat(value.replace(',', '.')) || 0;
-    setCoinValue((floatValue / current_price.twd).toString());
+    setCoinValue((floatValue / current_price.twd).toLocaleString().toString());
   };
 
   return (
