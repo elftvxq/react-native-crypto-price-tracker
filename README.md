@@ -30,7 +30,7 @@ expo start
 ###### Home Screen
 
 Can view the latest 25 currencies detials including market rank, current price, and total volume
-![Home Screen](https://i.imgur.com/KbbeWZc.jpg)
+![Home Screen](https://i.imgur.com/KbbeWZc.jpg?2)
 
 ## :bulb: Project Information
 
