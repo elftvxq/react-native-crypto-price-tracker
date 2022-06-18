@@ -7,46 +7,30 @@ import { getWatchlistedCoins } from '../../services/request.js';
 
 const WatchlistScreen = () => {
   const { watchlistCoinIds } = useWatchlist();
-
-  console.log(
-    '🚀 ~ file: index.jsx ~ line 9 ~ WatchlistScreen ~ watchlistCoinIds',
-    watchlistCoinIds
-  );
-
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // const transformCoinIds = () => {
-  //   if (watchlistCoinIds) return watchlistCoinIds.join('%2C');
-  // };
-  // console.log(
-  //   '🚀 ~ file: index.jsx ~ line 18 ~ WatchlistScreen ~ transformCoinIds',
-  //   transformCoinIds()
-  // );
+  const transformCoinIds = () => {
+    if (watchlistCoinIds) return watchlistCoinIds.join('%2C');
+  };
 
   const fetchWatchlistedCoins = async () => {
     if (loading) return;
 
     setLoading(true);
 
-    const watchlistedCoinsData = await getWatchlistedCoins();
-    // ((
-    //   await getWatchlistedCoins(1, transformCoinIds())
-    // )) || [];
+    const watchlistedCoinsData = await getWatchlistedCoins(
+      1,
+      transformCoinIds()
+    );
 
-    // setCoins((existingCoins) => [...existingCoins, ...watchlistedCoinsData]);
-    // setCoins([...coins, ...watchlistedCoinsData]);
     setCoins(watchlistedCoinsData);
     setLoading(false);
   };
 
   useEffect(() => {
     fetchWatchlistedCoins();
-  }, []);
-
-  // useEffect(() => {
-  //   fetchWatchlistedCoins();
-  // }, [watchlistCoinIds]);
+  }, [watchlistCoinIds]);
 
   return (
     <FlatList

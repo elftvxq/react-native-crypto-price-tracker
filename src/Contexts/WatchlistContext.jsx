@@ -12,9 +12,10 @@ const WatchlistProvider = ({ children }) => {
   const getWatchlistData = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('@watchlist_coins');
+
       setWatchlistCoinIds(jsonValue !== null ? JSON.parse(jsonValue) : []);
-    } catch (err) {
-      console.log(err);
+    } catch (e) {
+      console.log(e);
     }
   };
 
@@ -26,7 +27,7 @@ const WatchlistProvider = ({ children }) => {
   const storeWatchlistCoinId = async (coinId) => {
     try {
       const newWatchlist = [...watchlistCoinIds, coinId];
-      const jsonValue = JSON.stringify('watchlist_coins', newWatchlist);
+      const jsonValue = JSON.stringify(newWatchlist);
       await AsyncStorage.setItem('@watchlist_coins', jsonValue);
       setWatchlistCoinIds(newWatchlist);
     } catch (e) {
@@ -34,11 +35,10 @@ const WatchlistProvider = ({ children }) => {
     }
   };
 
-  const removeWatchlistCoinIs = async (coinId) => {
+  const removeWatchlistCoinId = async (coinId) => {
     const newWatchlist = watchlistCoinIds.filter(
       (coinIdValue) => coinIdValue !== coinId
     );
-
     const jsonValue = JSON.stringify(newWatchlist);
     await AsyncStorage.setItem('@watchlist_coins', jsonValue);
     setWatchlistCoinIds(newWatchlist);
@@ -46,11 +46,7 @@ const WatchlistProvider = ({ children }) => {
 
   return (
     <WatchlistContext.Provider
-      value={{
-        watchlistCoinIds,
-        storeWatchlistCoinId,
-        removeWatchlistCoinIs,
-      }}
+      value={{ watchlistCoinIds, storeWatchlistCoinId, removeWatchlistCoinId }}
     >
       {children}
     </WatchlistContext.Provider>

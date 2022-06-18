@@ -9,16 +9,20 @@ const CoinDetailHeader = (props) => {
   const { coinId, image, name, symbol, marketCapRank } = props;
   // hooks
   const navigation = useNavigation();
-  const { watchlistCoinIds, storeWatchlistCoinId, removeWatchlistCoinIs } =
+  const { watchlistCoinIds, storeWatchlistCoinId, removeWatchlistCoinId } =
     useWatchlist();
 
   const checkIfCoinIsWatchlisted = () => {
     return watchlistCoinIds.some((coinIdValue) => coinIdValue === coinId);
   };
+  console.log(
+    '🚀 ~ file: index.jsx ~ line 18 ~ checkIfCoinIsWatchlisted ~ checkIfCoinIsWatchlisted',
+    checkIfCoinIsWatchlisted
+  );
 
   const handleWatchlistCoin = () => {
     if (checkIfCoinIsWatchlisted()) {
-      return removeWatchlistCoinIs(coinId);
+      return removeWatchlistCoinId(coinId);
     }
     return storeWatchlistCoinId(coinId);
   };
