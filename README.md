@@ -1,6 +1,6 @@
 # Shopee Recruitment Mini Project
 
-This project is bootstrapped with [Expo](https://docs.expo.dev/) and [React](https://reactjs.org/) for MaiCoin recruitment.
+This project is bootstrapped with [Expo](https://docs.expo.dev/) and [React](https://reactjs.org/)
 
 ## :mount_fuji: Requirement
 
@@ -14,7 +14,7 @@ How to run this website locally
 2. In the project root file, run `npm install` to install all dependencies
 3. Make sure install Expo `npm install --global expo-cli`. (If it's installed, can skip this step)
 4. Run `expo start` to open [http://localhost:19002/](http://localhost:19002/) to view it in the browser
-5. Click **Run on iOS simulator** or **Run on Android**
+5. Click **Run on iOS simulator** or **Run on Android** (Please check the doc to install and set up the environment. [iOS Simulatore](https://docs.expo.dev/workflow/ios-simulator/#step-1-install-xcode) / [Android Studio Emulator](https://docs.expo.dev/workflow/android-studio-emulator/))
 
 The commands you will need:
 
@@ -63,6 +63,7 @@ Check the watch list by navigation tab
 - **Framework**: Expo, React 17 and React Native
 - **Language**: ES6 & compiled by Babel 7+
 - **Animation/Chart Framework**: React Native Animated Charts
+- **API resource**: [Coingecko](https://www.coingecko.com/en/api)
 
 ## :jack_o_lantern: Documentation
 
