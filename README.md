@@ -27,10 +27,29 @@ expo start
 
 ## :iphone: Demo
 
-###### Home Screen
+### Home Screen
 
 Can view the latest 25 currencies detials including market rank, current price, and total volume
-![Home Screen](https://i.imgur.com/KbbeWZc.jpg?2)
+![Home Screen](https://i.imgur.com/KbbeWZc.jpg?3)
+
+Can sort by currenct name by alphabetically, current price and current total volume
+![Sort Feature](https://i.imgur.com/0vq7t9R.jpg?1)
+
+### Currency Detailed Pahe
+
+Can view the currency price details such as price change percentage in 24h, price change chart
+Press the curve line on the chart can get the according price
+![Currency Detailed Page](https://i.imgur.com/a4Be00b.jpg?1)
+
+USDT and TWD calculation convertor
+![Currency Convertor](https://i.imgur.com/8qCwBGV.jpg?1)
+
+### Watch List
+
+User can add or remove the currency to watch list by clicing the star on the left upper corner
+Then go to watch list by navigation tab
+
+![Watch List](https://i.imgur.com/XnXlFCM.jpg?1)
 
 ## :bulb: Project Information
 
