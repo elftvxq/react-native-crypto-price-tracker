@@ -1,4 +1,4 @@
-# Shopee Recruitment Mini Project
+# Crypto Price Tracking Mini Project
 
 This project is bootstrapped with [Expo](https://docs.expo.dev/) and [React](https://reactjs.org/)
 
