@@ -1,6 +1,6 @@
 # Problems and notes
 
-The project is only for recruiment use.
+The project is only for recruiment/personal use.
 
 ## 1. How to execute package？
 

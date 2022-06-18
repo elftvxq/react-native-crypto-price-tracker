@@ -47,18 +47,15 @@ The components files are arranged as below:
 
 ## UI Component
 
-This project goes with [React Native][react-native] and [Expo][expo]. React native provides and expo provie built-in UI component that Ant User-Experience Design Team builds.
+This project goes with [React Native][react-native] and [Expo][expo]. React native and Expo provie built-in UI component that can directly use in the project.
 
 The season I use Expo because of it's rich community resources and support the component which React Native doesn't include.
-Besides, it provides various of components that you need and it is very configurable from documentation.
+Besides, it provides various of components and it is very configurable from documentation.
 
 The project also uses [react-native-animated-charts][react-native-animated-charts] to display the currency change chart graph. It is animated based on the given data.
 
-\*\* Design consistency
-In this project, I take some online resource and follow its design to adjust page layout and color to make UI design consistent.
+\*\* For design consistency in this project, I take some online resources and follow the design such as page layout and color to make UI design consistent.
 
 [react-native]: https://reactnative.dev/docs/components-and-apis
 [expo]: https://docs.expo.dev/guides/userinterface/
 [react-native-animated-charts]: https://github.com/rainbow-me/react-native-animated-charts
-[less-loader]: https://github.com/webpack-contrib/less-loader
-[webpack]: https://webpack.js.org
