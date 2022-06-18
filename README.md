@@ -37,19 +37,21 @@ Can sort by currenct name by alphabetically, current price and current total vol
 
 ### Currency Detailed Pahe
 
-Can view the currency price details such as price change percentage in 24h, price change chart
+Can view the currency price details such as price change percentage in 24h, price change chart.
+
 Press the curve line on the chart can get the according price
 
 ![Currency Detailed Page](https://i.imgur.com/a4Be00b.jpg?1)
 
-USDT and TWD calculation convertor
+Crypto currency and TWD calculation convertor
 
 ![Currency Convertor](https://i.imgur.com/8qCwBGV.jpg?1)
 
 ### Watch List
 
-User can add or remove the currency to watch list by clicing the star on the left upper corner
-Then go to watch list by navigation tab
+User can add or remove the currency to watch list by clicing the star on the left upper corner.
+
+Check the watch list by navigation tab
 
 ![Watch List](https://i.imgur.com/XnXlFCM.jpg?1)
 
