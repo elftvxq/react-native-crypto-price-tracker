@@ -14,12 +14,12 @@ How to run this website locally
 2. In the project root file, run `npm install` to install all dependencies
 3. Make sure install Expo `npm install --global expo-cli`. (If it's installed, can skip this step)
 4. Run `expo start` to open [http://localhost:19002/](http://localhost:19002/) to view it in the browser
-5. Click `Run on iOS simulator` or `run on Android`
+5. Click **Run on iOS simulator** or **Run on Android**
 
 The commands you will need:
 
 ```
-Uncompress the file / git clone https://github.com/elftvxq/react-native-crypto-price-tracker.git
+git clone https://github.com/elftvxq/react-native-crypto-price-tracker.git
 cd react-native-crypto-price-tracker
 npm install
 expo start
