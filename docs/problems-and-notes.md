@@ -12,28 +12,30 @@ Please read the [structure.md](structure.md). It contains the overall architectu
 
 ## 3. The understanding on the libraries which are used in the project, as well as the features and brief
 
-- [Expo][expo]: Expo apps are React Native apps that include the Expo SDK. The SDK is a native-and-JS library that provides access to a device's system features (such as camera, contacts, local storage, and other hardware). This means you don't need to use Xcode or Android Studio, nor do you need to write any native code, and it also makes your pure-JS project very portable as it can run in any native environment that includes the Expo SDK.
+[Expo][expo]: Expo apps are React Native apps that include the Expo SDK. The SDK is a native-and-JS library that provides access to a device's system features (such as camera, contacts, local storage, and other hardware). This means you don't need to use Xcode or Android Studio, nor do you need to write any native code, and it also makes your pure-JS project very portable as it can run in any native environment that includes the Expo SDK.
 
 Expo also provides UI components to handle various use cases that are covered by almost all apps but are not in React Native core, e.g. icons, blurred views, etc.
 
--[React Native][reactnative]: React Native is a javascript-based framework for building native mobile applications for the Android and iOS platforms. It is based on Facebook's JavaScript library React, which builds user interfaces for mobile platforms. Web developers can use React Native JavaScript to write Android and iOS apps that behave and look like native apps. Code written in React Native can also be shared across platforms, allowing efficient development for both iOS and Android at the same time.
+[React Native][reactnative]: React Native is a javascript-based framework for building native mobile applications for the Android and iOS platforms. It is based on Facebook's JavaScript library React, which builds user interfaces for mobile platforms. Web developers can use React Native JavaScript to write Android and iOS apps that behave and look like native apps. Code written in React Native can also be shared across platforms, allowing efficient development for both iOS and Android at the same time.
 
 React Native applications are built by combining JavaScript and xml type markup (ie JSX). The React Native bridge is responsible for performing native rendering of APIs in Java (for Android) and Swift (for iOS). Apps are rendered using mobile UI components instead of web views, and work similarly to other mobile apps. React Native can display a JavaScript interface to the platform's APIs. As a result, React Native apps can access mobile platform features such as user location and phone cameras.
 
-- [Babel][babel]: Babel is a transcoder that converts ES6 code can be read on this browser. This project is initialized with Expo, so `@babel-preset-expo` has been automatically introduced in the configuration file of `babel.config.js` built in the root directory.
-  This preset extends the default React Native preset and adds support for decorators, tree-shaking web packages, and loading font icons with optional native dependencies if they're installed.
+[Babel][babel]: Babel is a transcoder that converts ES6 code can be read on this browser. This project is initialized with Expo, so `@babel-preset-expo` has been automatically introduced in the configuration file of `babel.config.js` built in the root directory.
+This preset extends the default React Native preset and adds support for decorators, tree-shaking web packages, and loading font icons with optional native dependencies if they're installed.
 
 preset-env will determine the corresponding packages that need to be loaded according to the developer's configuration. In addition, in order to use the chart library, the plugin of `react-native-reanimated/plugin` is imported to compile the charts and related animations.
 
-- [React][react]: React is one of the most commonly used front-end frameworks. It uses JSX syntax to write XML-similar languages ​​in components. The reason for using React is that it conforms to the MVC model, so that data control and screen processing can be separated.
-- [Hooks][hooks]: React Component has two types: `class component` and `functional component`. When `Hooks` has not yet appeared, if you need to manage `state` or call specific functions in different stages of the life cycle, you must use certain React API in `class component`. `Hooks` appears in `functional component`. It becomes possible to use Hook API to manage lifecycle logic or share state. The design of `Hooks` is to reduce the function that `class component` needs to write quite large code to achieve. `functional component` makes it easier to accomplish the desired function instead of using class component.
+[React][react]: React is one of the most commonly used front-end frameworks. It uses JSX syntax to write XML-similar languages ​​in components. The reason for using React is that it conforms to the MVC model, so that data control and screen processing can be separated.
+[Hooks][hooks]: React Component has two types: `class component` and `functional component`. When `Hooks` has not yet appeared, if you need to manage `state` or call specific functions in different stages of the life cycle, you must use certain React API in `class component`. `Hooks` appears in `functional component`. It becomes possible to use Hook API to manage lifecycle logic or share state. The design of `Hooks` is to reduce the function that `class component` needs to write quite large code to achieve. `functional component` makes it easier to accomplish the desired function instead of using class component.
 
-I rarely use `Context API` on my previous experience, so I also import this API as data management tool on the project. -[Async Storage][async storage]: A simple, asynchronous, persistent Key-Value storage system that is global to the app. Can be used in place of LocalStorage.
+I rarely use `Context API` on my previous experience, so I also import this API as data management tool on the project.
+
+[Async Storage][async storage]: A simple, asynchronous, persistent Key-Value storage system that is global to the app. Can be used in place of LocalStorage.
 
 The location of AsyncStorage storage varies by system.
 Storage in iOS is similar to NSUserDefault, which is stored on the device through a `plist` file. On Android it will be stored in `RocksDB` or `SQLite`, depending on which you use.
 
-- [react-native-animated-charts][react-native-animated-charts]: This chart library provides very useful Components and it friendly rendered the animated charts with smoothly transition based on a given input. I haven't explored its' all features and just applied small parts of its props to display the price change chart. I'm interestedi how to apply others feature to build other practical features. Can spend more time doing researching on it.
+[react-native-animated-charts][react-native-animated-charts]: This chart library provides very useful Components and it friendly rendered the animated charts with smoothly transition based on a given input. I haven't explored its' all features and just applied small parts of its props to display the price change chart. I'm interestedi how to apply others feature to build other practical features. Can spend more time doing researching on it.
 
 [expo]: https://docs.expo.dev/
 [reactnative]: https://reactnative.dev/
