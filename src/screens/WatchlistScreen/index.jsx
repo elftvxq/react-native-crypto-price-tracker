@@ -3,7 +3,7 @@ import { View, Text, FlatList, RefreshControl } from 'react-native';
 import { useWatchlist } from '../../Contexts/WatchlistContext';
 import CoinItem from '../../components/CoinItem';
 import { getWatchlistedCoins } from '../../services/request.js';
-// import { WatchListContext } from '../../Contexts/WatchlistContext';
+import HeaderBar from '../HomeScreen/HeaderBar.js';
 
 const WatchlistScreen = () => {
   const { watchlistCoinIds } = useWatchlist();
@@ -33,20 +33,21 @@ const WatchlistScreen = () => {
   }, [watchlistCoinIds]);
 
   return (
-    <FlatList
-      keyExtractor={(id) => {
-        id.toString();
-      }}
-      data={coins}
-      renderItem={({ item }) => <CoinItem marketCoin={item} />}
-      refreshControl={
-        <RefreshControl
-          refreshing={loading}
-          tintColor='white'
-          onRefresh={fetchWatchlistedCoins}
-        />
-      }
-    />
+    <>
+      <HeaderBar title={'Watch List'} />
+      <FlatList
+        keyExtractor={(item, index) => item.key}
+        data={coins}
+        renderItem={({ item }) => <CoinItem marketCoin={item} />}
+        refreshControl={
+          <RefreshControl
+            refreshing={loading}
+            tintColor='white'
+            onRefresh={fetchWatchlistedCoins}
+          />
+        }
+      />
+    </>
   );
 };
 

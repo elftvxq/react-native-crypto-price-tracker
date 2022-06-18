@@ -15,10 +15,6 @@ const CoinDetailHeader = (props) => {
   const checkIfCoinIsWatchlisted = () => {
     return watchlistCoinIds.some((coinIdValue) => coinIdValue === coinId);
   };
-  console.log(
-    '🚀 ~ file: index.jsx ~ line 18 ~ checkIfCoinIsWatchlisted ~ checkIfCoinIsWatchlisted',
-    checkIfCoinIsWatchlisted
-  );
 
   const handleWatchlistCoin = () => {
     if (checkIfCoinIsWatchlisted()) {
