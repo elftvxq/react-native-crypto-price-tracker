@@ -39,9 +39,11 @@ Can sort by currenct name by alphabetically, current price and current total vol
 
 Can view the currency price details such as price change percentage in 24h, price change chart
 Press the curve line on the chart can get the according price
+
 ![Currency Detailed Page](https://i.imgur.com/a4Be00b.jpg?1)
 
 USDT and TWD calculation convertor
+
 ![Currency Convertor](https://i.imgur.com/8qCwBGV.jpg?1)
 
 ### Watch List
