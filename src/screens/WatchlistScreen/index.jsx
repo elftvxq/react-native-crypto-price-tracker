@@ -36,7 +36,7 @@ const WatchlistScreen = () => {
     <>
       <HeaderBar title={'Watch List'} />
       <FlatList
-        keyExtractor={(item, index) => item.key}
+        keyExtractor={(item, index) => item.id}
         data={coins}
         renderItem={({ item }) => <CoinItem marketCoin={item} />}
         refreshControl={

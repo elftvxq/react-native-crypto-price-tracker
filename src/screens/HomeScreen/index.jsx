@@ -80,9 +80,10 @@ const HomeScreen = ({}) => {
       </View>
 
       <FlatList
-        keyExtractor={(id) => {
-          id.toString();
-        }}
+        // keyExtractor={(id) => {
+        //   id.toString();
+        // }}
+        keyExtractor={(item, index) => item.id}
         data={coinList}
         renderItem={({ item }) => <CoinItem marketCoin={item} />}
         onEndReached={() => fetchCoinList(coinList.length / 25 + 1)}
