@@ -25,11 +25,17 @@ npm install
 expo start
 ```
 
+## :iphone: Demo
+
+###### Home Screen
+
+Can view the latest 25 currencies detials including market rank, current price, and total volume
+![Home Screen](https://imgur.com/KbbeWZc)
+
 ## :bulb: Project Information
 
 - **Framework**: Expo, React 17 and React Native
 - **Language**: ES6 & compiled by Babel 7+
-- **Bundler**: Webpack
 - **Animation/Chart Framework**: React Native Animated Charts
 
 ## :jack_o_lantern: Documentation
