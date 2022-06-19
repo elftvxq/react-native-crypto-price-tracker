@@ -1,4 +1,4 @@
-# Crypto Price Tracking Mini Project
+# Crypto Price Tracking Project
 
 This project is bootstrapped with [Expo](https://docs.expo.dev/) and [React Native](https://reactnative.dev/)
 
@@ -13,7 +13,7 @@ How to run this website locally
 1. Uncompress the file (or git clone this repository)
 2. In the project root file, run `npm install` to install all dependencies
 3. Make sure to install Expo `npm install --global expo-cli`. (If it's installed, can skip this step)
-4. Run `expo start` to open [http://localhost:19002/](http://localhost:19002/) to view it in the browser
+4. Run `expo start` to open [http://localhost:19002/](http://localhost:19002/) and view it in the browser
 5. Click **Run on iOS simulator** or **Run on Android** (Please check the doc to install and set up the environment. [iOS Simulatore](https://docs.expo.dev/workflow/ios-simulator/#step-1-install-xcode) / [Android Studio Emulator](https://docs.expo.dev/workflow/android-studio-emulator/))
 
 The commands you will need:
@@ -43,7 +43,7 @@ Can sort by currency name alphabetically, current price and current total volume
 
 Can view the currency price details such as price change percentage in 24h, price change chart.
 
-Press the curve line on the chart can get the accordingto price
+Press the curve line on the chart can get the according to price
 
 ![Currency Detailed Page](https://i.imgur.com/a4Be00b.jpg?1)
 
